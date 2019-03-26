@@ -1,0 +1,24 @@
+@for $i from 1 through 3 {
+  h#{$i} {
+    font-size:#{40-3*$i*$i+$i}px;
+  }
+}
+
+h4,h5,h6{
+  font-size:14px;
+}
+
+@for $i from 1 through 12 {
+  .fs-#{$i*5} {
+    font-size:#{$i*5}px!important;
+  }
+}
+
+@for $i from 0 through 20 {
+  .mg-#{$i*5} {
+    margin:#{$i*5}%!important;
+  }
+  .pd-#{$i*5} {
+    padding:#{$i*5}%!important;
+  }
+}

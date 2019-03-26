@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'AMD';
+  src: url('../fonts/AMDRTG.ttf')  format('truetype');
+}
+
+@font-face{
+  font-family: 'JKGothicL';
+  src: url('../fonts/JKGothicL.woff')  format('woff'),
+  url('../fonts/JKGothicL.ttf')  format('truetype');
+}
+
+@font-face{
+  font-family: 'JKGothicM';
+  src: url('../fonts/JKGothicM.woff')  format('woff'),
+  url('../fonts/JKGothicM.ttf')  format('truetype');
+}
+
+*,*:before,*:after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: $main-color;
+  font-family: 'JKGothicL','JKGothicM',sans-serif;
+  font-size: 16px;
+}
+body{
+  background: $add-color;
+  a{
+    text-decoration: none;
+    &:hover{
+      text-decoration: dotted $sub-color;
+    }
+  }
+  b{
+    font-family: 'JKGothicM';
+  }
+}
+.hero {
+    height: 550px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: -2;
+  .title{
+    text-align: center;
+    font-family: 'AMD';
+    font-size: 100px;
+    color: rgb(255,174,201);
+    vertical-align: middle;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    top: 15%;
+    img{
+      max-width: 100%;
+    }
+  }
+}
+.contents {
+  position: relative;
+  overflow: hidden;
+	margin-top: 300px;
+  padding: 80px 0 0 0;
+  &:before,&:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 80%;
+    margin: 3% -10% 0;
+  }
+  &:before{
+    background: $sub-color;
+    transform-origin: left center;
+    transform: rotate(3deg);
+    z-index: -2;
+  }
+  &:after{
+    background: rgb(255,174,201);
+    background: #344258;
+    transform-origin: right center;
+    transform: rotate(-3deg);
+    z-index: -1;
+  }
+  .contents_inner {
+    box-sizing: boder-box;
+    width: 100%;
+    max-width: 960px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 100px 10px 120px;
+    color: #fff;
+    text-align: center;
+    .subject{
+      font-size: 3em;
+      border-bottom: 2px solid #fff;
+      margin: 0 0 30px 0;
+    }
+    .block{
+      margin: 20px 0 150px 0;
+    }
+    .circle{
+      width: 100%;
+      border: 1px solid transparent;
+      border-radius: 50%;
+    }
+    img{
+      -webkit-user-drag: none;
+    }
+  }
+}
+
+@include sp{
+	.contents_inner {
+			padding: 20px 10px 120px;
+	}
+	.contents:before,.contents:after{
+		height: 90%;
+	}
+}

@@ -1,0 +1,66 @@
+// 色定義
+$lightblue: #4baae0;
+$lightgray: #EFF4F7;
+$lightyellow: #fff464;
+$white: #fff;
+$main-color: $white;
+$sub-color: $lightblue;
+$add-color: $lightyellow;
+$add-color: $lightgray;
+
+// Viewport設定
+$pc: 1025px; // PC
+$tb: 1024px; //タブレット
+$sp: 767px;  // スマホ
+
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tb{
+  @media (max-width: ($tb)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+@include pc{
+  .only-pc{
+    display: block;
+  }
+  .only-tb{
+    display: none;
+  }
+  .only-sp{
+    display: none;
+  }
+}
+
+@include tb{
+  .only-pc{
+    display: none;
+  }
+  .only-tb{
+    display: block;
+  }
+  .only-sp{
+    display: none;
+  }
+}
+
+@include sp{
+  .only-pc{
+    display: none;
+  }
+  .only-tb{
+    display: none;
+  }
+  .only-sp{
+    display: block;
+  }
+}

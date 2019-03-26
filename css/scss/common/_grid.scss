@@ -1,0 +1,12 @@
+$total-col: 12;
+.row{
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat($total-col, 1fr);
+}
+
+@for $i from 1 through $total-col {
+  .col-#{$i} {
+    grid-column: span $i;
+  }
+}
